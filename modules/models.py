@@ -82,6 +82,8 @@ def ArcFaceModel(size=None, channels=3, num_classes=None, name='arcface_model',
     x = Backbone(backbone_type=backbone_type, use_pretrain=use_pretrain)(x)
 
     embds = OutputLayer(embd_shape, w_decay=w_decay)(x)
+    
+    embds = embds / tf.norm(embds, axis=1, keepdims=True)
 
     if training:
         assert num_classes is not None
