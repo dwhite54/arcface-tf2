@@ -65,8 +65,8 @@ if __name__ == '__main__':
                         type=str)
     parser.add_argument("--gpu", help="Which GPU to use for feature extraction",
                         type=str)
-    parser.add_argument("--meta_path", help="The path to the IJBC_backup.npz meta file generated from InsightFace code.")
-    parser.add_argument("--input_path", help="The path to aligned images named in the meta file")
+    parser.add_argument("--meta_path", help="The path to the IJBC_backup.npz meta file generated from InsightFace code.", type=str)
+    parser.add_argument("--input_path", help="The path to aligned images named in the meta file", type=str)
     parser.add_argument("--output_path", help="The path to the numpy file containing output embeddings",
                         type=str, default='embeds.npy')
     args = parser.parse_args()
